@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "crb-add-outlook-event"
+    }
+  },
+  "defaultProject": "crb-add-outlook-event",
+  "cli": {
+    "analytics": false
+  }
 }
