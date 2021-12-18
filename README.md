@@ -1,3 +1,5 @@
+[![Angular GitHub CI](https://github.com/CrackingBits/crb-add-outlook-event/actions/workflows/angular-ci.yml/badge.svg)](https://github.com/CrackingBits/crb-add-outlook-event/actions/workflows/angular-ci.yml)
+
 # CrbAddOutlookEvent
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
