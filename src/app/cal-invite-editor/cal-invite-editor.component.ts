@@ -18,8 +18,6 @@ export class CalInviteEditorComponent implements OnInit {
     enddt: new FormControl(''),
   });
 
-  constructor() { }
-
   ngOnInit(): void {
     this.eventDetailsForm.patchValue({
       subject: 'Title',
@@ -31,14 +29,6 @@ export class CalInviteEditorComponent implements OnInit {
   }
 
   onSubmit() {
-    const queryParams = {
-      subject: this.eventDetailsForm.value.subject,
-      body: this.eventDetailsForm.value.body,
-      location: this.eventDetailsForm.value.location,
-      startdt: this.eventDetailsForm.value.startdt,
-      enddt: this.eventDetailsForm.value.enddt
-    };
-
     this.generatedURL = O365_BASE_URL
         + "/compose"
         + "?subject=" + encodeURIComponent(this.eventDetailsForm.value.subject)

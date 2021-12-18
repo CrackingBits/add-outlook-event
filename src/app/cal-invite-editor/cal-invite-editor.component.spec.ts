@@ -54,10 +54,6 @@ describe('CalInviteEditorComponent', () => {
 
     component.onSubmit();
 
-    console.log(component.generatedURL);
-
-    //expect(component.generatedURL).toBeTruthy();
-
     expect(component.generatedURL).toEqual(O365_BASE_URL
         + "/compose"
         + "?subject=" + encodeURIComponent(component.eventDetailsForm.value.subject)
@@ -65,9 +61,5 @@ describe('CalInviteEditorComponent', () => {
         + "&location=" + encodeURIComponent(component.eventDetailsForm.value.location)
         + "&startdt=" + encodeURIComponent(component.eventDetailsForm.value.startdt)
         + "&enddt=" + encodeURIComponent(component.eventDetailsForm.value.enddt));
-
-    // Alternative way in Angular
-    //  const tree = this.router.createUrlTree(['compose'], { queryParams });
-    // this.generatedURL = 'https://outlook.office.com/calendar/deeplink' + this.serializer.serialize(tree);
   });
 });
