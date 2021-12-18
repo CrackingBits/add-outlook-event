@@ -1,0 +1,24 @@
+<form [formGroup]="eventDetailsForm" (ngSubmit)="onSubmit()">
+
+  <label for="subject">Subject: </label>
+  <input id="subject" type="text" formControlName="subject" required>
+
+  <label for="body">Body: </label>
+  <input id="body" type="text" formControlName="body">
+
+  <label for="location">Location: </label>
+  <input id="location" type="text" formControlName="location">
+
+  <label for="startdt">Start: </label>
+  <input id="startdt" type="datetime-local" formControlName="startdt">
+
+  <label for="enddt">End: </label>
+  <input id="enddt" type="datetime-local" formControlName="enddt">
+
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!eventDetailsForm.valid">Generate</button>
+</form>
+
+<p>
+  <textarea readonly>{{generatedURL}}</textarea>
+</p>
