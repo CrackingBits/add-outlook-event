@@ -1,1 +1,17 @@
-{}
+{
+    "html.format.endWithNewline": true,
+    "html.format.indentInnerHtml": true,
+    "terminal.integrated.copyOnSelection": true,
+    "editor.suggestSelection": "first",
+    "tslint.autoFixOnSave": true,
+    "files.autoSave": "off",
+    "editor.formatOnSaveTimeout": 0,
+    "prettier.singleQuote": true,
+    "typescript.preferences.quoteStyle": "single",
+    "prettier.jsxSingleQuote": true,
+    "javascript.preferences.quoteStyle": "single",
+    "breadcrumbs.enabled": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+}
