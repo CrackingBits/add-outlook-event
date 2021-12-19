@@ -17,8 +17,15 @@
 
   <p>Complete the form to enable button.</p>
   <button type="submit" [disabled]="!eventDetailsForm.valid">Generate</button>
+  <button type="button" class="btn btn-default" (click)="onResetForm()">Reset</button>
+
 </form>
 
 <p>
   <textarea readonly>{{generatedURL}}</textarea>
 </p>
+
+<ul>
+  <li>Invitation URL: <a href="{{generatedURL}}" target="_blank" rel="noopener">{{generatedURL}}</a></li>
+  <li>Share URL: <a href="{{shareURL}}">{{shareURL}}</a></li>
+</ul>
