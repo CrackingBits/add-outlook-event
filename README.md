@@ -4,9 +4,10 @@
 
 ## TODO
 
-* Preview of Outlook Event
-* Buttons to copy
-* Copy to clipboard
+- Add these parameters: &path=/calendar/action/compose&rru=addevent&allday=false&online&to=santa@example.com,easter.bunny@example.com&cc=santa@example.com,easter.bunny@example.com'
+- Preview of Outlook Event
+- Buttons to copy
+- Copy to clipboard
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
