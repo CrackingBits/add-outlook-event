@@ -24,17 +24,17 @@ export class CalInviteEditorComponent implements OnInit {
       body: '<p>body<br> <br> URL example: <a href="https://www.google.com">Google</a></p>',
       location: 'Location',
       startdt: new Date().toISOString().substring(0, 16),
-      enddt: new Date(Date.now() + 60*60*1000).toISOString().substring(0, 16),
+      enddt: new Date(Date.now() + 60 * 60 * 1000).toISOString().substring(0, 16),
     });
   }
 
   onSubmit() {
     this.generatedURL = O365_BASE_URL
-        + "/compose"
-        + "?subject=" + encodeURIComponent(this.eventDetailsForm.value.subject)
-        + "&body=" + encodeURIComponent(this.eventDetailsForm.value.body)
-        + "&location=" + encodeURIComponent(this.eventDetailsForm.value.location)
-        + "&startdt=" + encodeURIComponent(this.eventDetailsForm.value.startdt)
-        + "&enddt=" + encodeURIComponent(this.eventDetailsForm.value.enddt);
+        + '/compose'
+        + '?subject=' + encodeURIComponent(this.eventDetailsForm.value.subject)
+        + '&body=' + encodeURIComponent(this.eventDetailsForm.value.body)
+        + '&location=' + encodeURIComponent(this.eventDetailsForm.value.location)
+        + '&startdt=' + encodeURIComponent(this.eventDetailsForm.value.startdt)
+        + '&enddt=' + encodeURIComponent(this.eventDetailsForm.value.enddt);
   }
 }

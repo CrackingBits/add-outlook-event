@@ -46,20 +46,20 @@ describe('CalInviteEditorComponent', () => {
   });
 
   it('should submit correct', () => {
-    component.eventDetailsForm.value.subject = "TEST SUBJECT";
-    component.eventDetailsForm.value.body = "TEST BODY <p>ščřžýáíé<a href=\"https://www.google.com\">ĚŠČ</a>ŘŽÝÁÍÉ</p>";
-    component.eventDetailsForm.value.location = "TEST LOCATION";
-    component.eventDetailsForm.value.startdt = "2021-12-18T12:34";
-    component.eventDetailsForm.value.enddt = "2021-12-18T13:45";
+    component.eventDetailsForm.value.subject = 'TEST SUBJECT';
+    component.eventDetailsForm.value.body = 'TEST BODY <p>ščřžýáíé<a href="https://www.google.com">ĚŠČ</a>ŘŽÝÁÍÉ</p>';
+    component.eventDetailsForm.value.location = 'TEST LOCATION';
+    component.eventDetailsForm.value.startdt = '2021-12-18T12:34';
+    component.eventDetailsForm.value.enddt = '2021-12-18T13:45';
 
     component.onSubmit();
 
     expect(component.generatedURL).toEqual(O365_BASE_URL
-        + "/compose"
-        + "?subject=" + encodeURIComponent(component.eventDetailsForm.value.subject)
-        + "&body=" + encodeURIComponent(component.eventDetailsForm.value.body)
-        + "&location=" + encodeURIComponent(component.eventDetailsForm.value.location)
-        + "&startdt=" + encodeURIComponent(component.eventDetailsForm.value.startdt)
-        + "&enddt=" + encodeURIComponent(component.eventDetailsForm.value.enddt));
+        + '/compose'
+        + '?subject=' + encodeURIComponent(component.eventDetailsForm.value.subject)
+        + '&body=' + encodeURIComponent(component.eventDetailsForm.value.body)
+        + '&location=' + encodeURIComponent(component.eventDetailsForm.value.location)
+        + '&startdt=' + encodeURIComponent(component.eventDetailsForm.value.startdt)
+        + '&enddt=' + encodeURIComponent(component.eventDetailsForm.value.enddt));
   });
 });
