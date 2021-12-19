@@ -2,6 +2,12 @@
 
 # CrbAddOutlookEvent
 
+## TODO
+
+* Preview of Outlook Event
+* Buttons to copy
+* Copy to clipboard
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
 ## Development server

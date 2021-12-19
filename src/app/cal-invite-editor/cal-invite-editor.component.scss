@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#eventDetailsForm {
+  min-width: 250px;
+  max-width: 600px;
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card {
+  word-break: break-all;
+  margin-bottom: 1em;
+}
+
+.buttons {
+  width: 120px !important;
+  min-width: unset !important;
+}

@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ControlContainer, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Observable } from 'rxjs';
@@ -19,27 +22,30 @@ describe('CalInviteEditorComponent', () => {
 
   class ActivatedRouteMock {
     queryParams = new Observable(observer => {
-       observer.next(DEFAULT_TEST_QUERY_PARAMS);
-       observer.complete();
+      observer.next(DEFAULT_TEST_QUERY_PARAMS);
+      observer.complete();
     });
- }
+  }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatFormFieldModule
       ],
-      declarations: [ CalInviteEditorComponent ],
+      declarations: [CalInviteEditorComponent],
       providers: [
         ControlContainer,
-         {
-            provide: ActivatedRoute,
-            useClass: ActivatedRouteMock
-         }
+        {
+          provide: ActivatedRoute,
+          useClass: ActivatedRouteMock
+        }
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -64,7 +70,7 @@ describe('CalInviteEditorComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
 
     const subject = compiled.querySelector('input[id="subject"]');
-    const body = compiled.querySelector('input[id="body"]');
+    const body = compiled.querySelector('textarea[id="body"]');
     const location = compiled.querySelector('input[id="location"]');
     const startdt = compiled.querySelector('input[id="startdt"]');
     const enddt = compiled.querySelector('input[id="enddt"]');
@@ -86,19 +92,19 @@ describe('CalInviteEditorComponent', () => {
     component.onSubmit();
 
     expect(component.generatedURL).toEqual(O365_BASE_URL
-        + '/compose'
-        + '?subject=' + encodeURIComponent(component.eventDetailsForm.value.subject)
-        + '&body=' + encodeURIComponent(component.eventDetailsForm.value.body)
-        + '&location=' + encodeURIComponent(component.eventDetailsForm.value.location)
-        + '&startdt=' + encodeURIComponent(component.eventDetailsForm.value.startdt)
-        + '&enddt=' + encodeURIComponent(component.eventDetailsForm.value.enddt));
+      + '/compose'
+      + '?subject=' + encodeURIComponent(component.eventDetailsForm.value.subject)
+      + '&body=' + encodeURIComponent(component.eventDetailsForm.value.body)
+      + '&location=' + encodeURIComponent(component.eventDetailsForm.value.location)
+      + '&startdt=' + encodeURIComponent(component.eventDetailsForm.value.startdt)
+      + '&enddt=' + encodeURIComponent(component.eventDetailsForm.value.enddt));
 
-    expect(component.shareURL).toEqual('/'
-        + '?subject=' + encodeURIComponent(component.eventDetailsForm.value.subject)
-        + '&body=' + encodeURIComponent(component.eventDetailsForm.value.body)
-        + '&location=' + encodeURIComponent(component.eventDetailsForm.value.location)
-        + '&startdt=' + encodeURIComponent(component.eventDetailsForm.value.startdt)
-        + '&enddt=' + encodeURIComponent(component.eventDetailsForm.value.enddt));
+    expect(component.shareURL).toEqual(window.location.protocol + '//' + window.location.host + '/'
+      + '?subject=' + encodeURIComponent(component.eventDetailsForm.value.subject)
+      + '&body=' + encodeURIComponent(component.eventDetailsForm.value.body)
+      + '&location=' + encodeURIComponent(component.eventDetailsForm.value.location)
+      + '&startdt=' + encodeURIComponent(component.eventDetailsForm.value.startdt)
+      + '&enddt=' + encodeURIComponent(component.eventDetailsForm.value.enddt));
   });
 
   it('sould erase string on reset', () => {

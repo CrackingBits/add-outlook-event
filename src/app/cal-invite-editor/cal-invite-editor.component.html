@@ -1,31 +1,58 @@
-<form [formGroup]="eventDetailsForm" (ngSubmit)="onSubmit()">
+<div class="container">
+  <form [formGroup]="eventDetailsForm" (ngSubmit)="onSubmit()" id="eventDetailsForm">
+    <mat-card>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Subject</mat-label>
+          <input matInput type="text" id="subject" formControlName="subject" required
+            placeholder="What is the name of this event?" />
+        </mat-form-field>
+      </p>
 
-  <label for="subject">Subject: </label>
-  <input id="subject" type="text" formControlName="subject" required>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Start date</mat-label>
+          <input matInput type="datetime-local" id="startdt" formControlName="startdt" required />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>End date</mat-label>
+          <input matInput type="datetime-local" id="enddt" formControlName="enddt" required />
+        </mat-form-field>
+      </p>
 
-  <label for="body">Body: </label>
-  <input id="body" type="text" formControlName="body">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Location</mat-label>
+          <input matInput type="text" id="location" formControlName="location"
+            placeholder="What is the address where this event is happening?" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Body</mat-label>
+          <textarea matInput id="body" formControlName="body" cdkTextareaAutosize cdkAutosizeMinRows="2"
+            cdkAutosizeMaxRows="10" matInput placeholder="Are there any details to share?"></textarea>
+        </mat-form-field>
+      </p>
 
-  <label for="location">Location: </label>
-  <input id="location" type="text" formControlName="location">
+      <p>
+        <button mat-stroked-button type="submit" [disabled]="!eventDetailsForm.valid" class="buttons">Generate</button>
+        <button mat-stroked-button type="button" class="btn btn-default" (click)="onResetForm()"
+          class="buttons">Reset</button>
+      </p>
+    </mat-card>
+    <mat-card>
+      <p>Invitation URL:
+        <em *ngIf="!generatedURL">Fill the details and click "Generate"</em>
+        <a href="{{ generatedURL }}" target="_blank" rel="noopener">{{ generatedURL }}</a>
+      </p>
+      <p style="font-size: xx-small;">Share URL:
+        <em *ngIf="!shareURL">...</em>
+        <a href="{{ shareURL }}">{{ shareURL }}</a>
+      </p>
+    </mat-card>
+  </form>
 
-  <label for="startdt">Start: </label>
-  <input id="startdt" type="datetime-local" formControlName="startdt">
-
-  <label for="enddt">End: </label>
-  <input id="enddt" type="datetime-local" formControlName="enddt">
-
-  <p>Complete the form to enable button.</p>
-  <button type="submit" [disabled]="!eventDetailsForm.valid">Generate</button>
-  <button type="button" class="btn btn-default" (click)="onResetForm()">Reset</button>
-
-</form>
-
-<p>
-  <textarea readonly>{{generatedURL}}</textarea>
-</p>
-
-<ul>
-  <li>Invitation URL: <a href="{{generatedURL}}" target="_blank" rel="noopener">{{generatedURL}}</a></li>
-  <li>Share URL: <a href="{{shareURL}}">{{shareURL}}</a></li>
-</ul>
+</div>
