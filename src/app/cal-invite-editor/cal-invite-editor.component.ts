@@ -5,10 +5,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export const O365_BASE_URL = 'https://outlook.office.com/calendar/deeplink';
 export const DEFAULT_QUERY_PARAMS = {
   subject: 'Title',
+  to: 'john.doe@example.com, johny@fakedomain.org',
+  cc: '',
   body: '<p>Body<br> <br> URL example: <a href="https://www.google.com">Google</a></p>',
   location: 'Location',
   startdt: new Date().toISOString().substring(0, 16),
   enddt: new Date(Date.now() + 60 * 60 * 1000).toISOString().substring(0, 16),
+  online: false,
+  allday: false
 };
 
 @Component({
@@ -19,12 +23,17 @@ export const DEFAULT_QUERY_PARAMS = {
 export class CalInviteEditorComponent implements OnInit {
   generatedURL = '';
   shareURL = '';
+  showOptional = false;
   eventDetailsForm = new FormGroup({
     subject: new FormControl(''),
+    to: new FormControl(''),
+    cc: new FormControl(''),
     body: new FormControl(''),
     location: new FormControl(''),
     startdt: new FormControl(''),
     enddt: new FormControl(''),
+    online: new FormControl(''),
+    allday: new FormControl('')
   });
 
   constructor(private route: ActivatedRoute, private router: Router) { }
@@ -33,12 +42,18 @@ export class CalInviteEditorComponent implements OnInit {
     this.cleanURLs();
     this.route.queryParams.subscribe((params) => {
       this.eventDetailsForm.patchValue({
-        subject: params.subject ? params.subject : DEFAULT_QUERY_PARAMS.subject,
-        body: params.body ? params.body : DEFAULT_QUERY_PARAMS.body,
-        location: params.location ? params.location : DEFAULT_QUERY_PARAMS.location,
-        startdt: params.startdt ? params.startdt : DEFAULT_QUERY_PARAMS.startdt,
-        enddt: params.enddt ? params.enddt : DEFAULT_QUERY_PARAMS.enddt,
+        subject: (params.subject !== undefined) ? params.subject : DEFAULT_QUERY_PARAMS.subject,
+        to: (params.to !== undefined) ? params.to : DEFAULT_QUERY_PARAMS.to,
+        cc: (params.cc !== undefined) ? params.cc : DEFAULT_QUERY_PARAMS.cc,
+        body: (params.body !== undefined) ? params.body : DEFAULT_QUERY_PARAMS.body,
+        location: (params.location !== undefined) ? params.location : DEFAULT_QUERY_PARAMS.location,
+        startdt: (params.startdt !== undefined) ? params.startdt : DEFAULT_QUERY_PARAMS.startdt,
+        enddt: (params.enddt !== undefined) ? params.enddt : DEFAULT_QUERY_PARAMS.enddt,
+        online: (params.online !== undefined) ? params.online : DEFAULT_QUERY_PARAMS.online,
+        allday: (params.allday !== undefined) ? params.allday : DEFAULT_QUERY_PARAMS.allday,
       });
+
+      this.showOptional = (this.eventDetailsForm.value.cc?.length > 0);
     });
   }
 
@@ -50,10 +65,14 @@ export class CalInviteEditorComponent implements OnInit {
     this.cleanURLs();
     this.eventDetailsForm.patchValue({
       subject: '',
+      to: '',
+      cc: '',
       body: '',
       location: '',
       startdt: '',
       enddt: '',
+      online: false,
+      allday: false
     });
     this.router.navigate([]);
   }
@@ -61,12 +80,16 @@ export class CalInviteEditorComponent implements OnInit {
   private prepareURLs() {
     const queryParams =
       '?subject=' + encodeURIComponent(this.eventDetailsForm.value.subject) +
+      '&to=' + encodeURIComponent(this.eventDetailsForm.value.to) +
+      '&cc=' + encodeURIComponent(this.eventDetailsForm.value.cc) +
       '&body=' + encodeURIComponent(this.eventDetailsForm.value.body) +
       '&location=' + encodeURIComponent(this.eventDetailsForm.value.location) +
       '&startdt=' + encodeURIComponent(this.eventDetailsForm.value.startdt) +
-      '&enddt=' + encodeURIComponent(this.eventDetailsForm.value.enddt);
+      '&enddt=' + encodeURIComponent(this.eventDetailsForm.value.enddt) +
+      (this.eventDetailsForm.value.online ? '&online=true' : '') +
+      (this.eventDetailsForm.value.allday ? '&allday=true' : '');
 
-    this.generatedURL = O365_BASE_URL + '/compose' + queryParams;
+    this.generatedURL = O365_BASE_URL + '/compose' + queryParams + '&path=/calendar/action/compose&rru=addevent';
     this.shareURL = window.location.protocol + '//' + window.location.host + '/' + queryParams;
   }
 

@@ -6,7 +6,7 @@
 
 #eventDetailsForm {
   min-width: 250px;
-  max-width: 600px;
+  max-width: 550px;
   width: 100%;
 }
 
@@ -20,6 +20,23 @@ mat-card {
 }
 
 .buttons {
-  width: 120px !important;
+  width: 50% !important;
   min-width: unset !important;
+}
+
+table {
+  width: 100%;
+}
+
+.slider-cell {
+  width: 90px;
+  padding-left: 20px;
+}
+
+.enable-optional {
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
 }

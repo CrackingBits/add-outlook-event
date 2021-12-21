@@ -2,35 +2,71 @@
   <form [formGroup]="eventDetailsForm" (ngSubmit)="onSubmit()" id="eventDetailsForm">
     <mat-card>
       <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Subject</mat-label>
-          <input matInput type="text" id="subject" formControlName="subject" required
-            placeholder="What is the name of this event?" />
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput type="text" id="subject" formControlName="subject" required placeholder="Add a title"
+            maxlength="255" aria-label="Add details for the event" />
         </mat-form-field>
       </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Attendees</mat-label>
+          <a *ngIf="!showOptional" class="enable-optional" [routerLink]="" (click)="showOptional=true">Optional</a>
+          <input matInput type="text" id="to" formControlName="to" placeholder="Invite required attendees"
+            maxlength="1000" aria-label="Invite required attendees" autocapitalize="off" autocomplete="off"
+            aria-autocomplete="both" />
+
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" *ngIf="showOptional">
+          <mat-label>Optional</mat-label>
+          <input matInput type="text" id="cc" formControlName="cc" placeholder="Invite optional attendees"
+            maxlength="1000" aria-label="Invite optional attendees" autocapitalize="off" autocomplete="off"
+            aria-autocomplete="both" />
+        </mat-form-field>
+      </p>
+      <table role="presentation">
+        <tr>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Start date</mat-label>
+              <input matInput type="datetime-local" id="startdt" formControlName="startdt" required
+                aria-label="Start date" />
+            </mat-form-field>
+          </td>
+          <td class="slider-cell">
+            <mat-slide-toggle id="allday" color="primary" formControlName="allday" labelPosition="before"
+              aria-label="All day">All day</mat-slide-toggle>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>End date</mat-label>
+              <input matInput type="datetime-local" id="enddt" formControlName="enddt" required aria-label="End date" />
+            </mat-form-field>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Location</mat-label>
+              <input matInput type="text" id="location" formControlName="location"
+                placeholder="Search for a room or location" aria-label="Search for a room or location"
+                autocapitalize="off" autocomplete="off" aria-autocomplete="both" />
+            </mat-form-field>
+          </td>
+          <td class="slider-cell">
+            <mat-slide-toggle id="online" color="primary" formControlName="online" labelPosition="before"
+              aria-label="Teams meeting">Teams meeting</mat-slide-toggle>
+          </td>
+        </tr>
+      </table>
 
       <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Start date</mat-label>
-          <input matInput type="datetime-local" id="startdt" formControlName="startdt" required />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>End date</mat-label>
-          <input matInput type="datetime-local" id="enddt" formControlName="enddt" required />
-        </mat-form-field>
-      </p>
-
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Location</mat-label>
-          <input matInput type="text" id="location" formControlName="location"
-            placeholder="What is the address where this event is happening?" />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="fill">
           <mat-label>Body</mat-label>
           <textarea matInput id="body" formControlName="body" cdkTextareaAutosize cdkAutosizeMinRows="2"
             cdkAutosizeMaxRows="10" matInput placeholder="Are there any details to share?"></textarea>
