@@ -3,11 +3,24 @@
 # CrbAddOutlookEvent
 
 ## TODO
-
-- Add these parameters: &path=/calendar/action/compose&rru=addevent&allday=false&online&to=santa@example.com,easter.bunny@example.com&cc=santa@example.com,easter.bunny@example.com'
+- Safari not working (Outlook issue)
+- Buttons to copy URL to clipboard
+- emails via material chips https://material.angular.io/components/chips/examples
 - Preview of Outlook Event
-- Buttons to copy
-- Copy to clipboard
+
+
+## Credits
+
+- https://aboutbits.it/blog/2021-03-11-using-github-actions-to-perfom-npm-version-increment
+
+## Useful links
+
+- https://www.345tool.com/generator/query-string-generator
+
+- https://coderedirect.com/questions/178007/how-to-force-desktop-view-on-mobile-devices-bootstrap
+- https://techcommunity.microsoft.com/t5/office-365/deeplink-add-event-not-work-in-mobile-ios-and-android-platform/m-p/2013844#
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
