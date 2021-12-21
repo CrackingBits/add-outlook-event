@@ -101,8 +101,8 @@ describe('CalInviteEditorComponent', () => {
     expect(location).toBeTruthy();
     expect(startdt).toBeTruthy();
     expect(enddt).toBeTruthy();
-    //expect(online).toBeTruthy();
-    // expect(allday).toBeTruthy();
+    expect(online).toBeTruthy();
+    expect(allday).toBeTruthy();
   });
 
   it('should submit correct', () => {

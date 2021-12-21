@@ -4,6 +4,7 @@
 
 ## TODO
 - Safari not working (Outlook issue)
+- not just URLs, but add also nice buttons "Add event ..."
 - Buttons to copy URL to clipboard
 - emails via material chips https://material.angular.io/components/chips/examples
 - Preview of Outlook Event
