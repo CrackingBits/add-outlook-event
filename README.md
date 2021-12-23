@@ -3,7 +3,6 @@
 # CrbAddOutlookEvent
 
 ## TODO
-- Analytics
 - Safari not working (Outlook issue)
 - not just URLs, but add also nice buttons "Add event ..."
 - Buttons to copy URL to clipboard
