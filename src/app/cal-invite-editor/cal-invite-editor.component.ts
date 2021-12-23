@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import Helper from './helper';
 
 export const O365_BASE_URL = 'https://outlook.office.com/calendar/deeplink';
 export const DEFAULT_QUERY_PARAMS = {
@@ -9,8 +10,8 @@ export const DEFAULT_QUERY_PARAMS = {
   cc: '',
   body: '<p>Body<br> <br> URL example: <a href="https://www.google.com">Google</a></p>',
   location: 'Location',
-  startdt: new Date().toISOString().substring(0, 16),
-  enddt: new Date(Date.now() + 60 * 60 * 1000).toISOString().substring(0, 16),
+  startdt: Helper.convertToLocalIso(new Date()),
+  enddt: Helper.convertToLocalIso(new Date(Date.now() + 60 * 60 * 1000)),
   online: false,
   allday: false
 };
