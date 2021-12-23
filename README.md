@@ -3,12 +3,15 @@
 # CrbAddOutlookEvent
 
 ## TODO
+- Analytics
 - Safari not working (Outlook issue)
 - not just URLs, but add also nice buttons "Add event ..."
 - Buttons to copy URL to clipboard
 - emails via material chips https://material.angular.io/components/chips/examples
+- handle Allday in better way
+- add some rules for dates
+- HTML Wysiwyg editor for BODY
 - Preview of Outlook Event
-
 
 ## Credits
 
