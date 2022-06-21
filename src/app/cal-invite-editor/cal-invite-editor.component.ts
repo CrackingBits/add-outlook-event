@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import Helper from './helper';
 
@@ -25,16 +25,16 @@ export class CalInviteEditorComponent implements OnInit {
   generatedURL = '';
   shareURL = '';
   showOptional = false;
-  eventDetailsForm = new FormGroup({
-    subject: new FormControl(''),
-    to: new FormControl(''),
-    cc: new FormControl(''),
-    body: new FormControl(''),
-    location: new FormControl(''),
-    startdt: new FormControl(''),
-    enddt: new FormControl(''),
-    online: new FormControl(''),
-    allday: new FormControl('')
+  eventDetailsForm = new UntypedFormGroup({
+    subject: new UntypedFormControl(''),
+    to: new UntypedFormControl(''),
+    cc: new UntypedFormControl(''),
+    body: new UntypedFormControl(''),
+    location: new UntypedFormControl(''),
+    startdt: new UntypedFormControl(''),
+    enddt: new UntypedFormControl(''),
+    online: new UntypedFormControl(''),
+    allday: new UntypedFormControl('')
   });
 
   constructor(private route: ActivatedRoute, private router: Router) { }
