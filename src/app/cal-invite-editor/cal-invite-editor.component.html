@@ -11,7 +11,7 @@
       <p>
         <mat-form-field appearance="fill">
           <mat-label>Attendees</mat-label>
-          <a *ngIf="!showOptional" class="enable-optional" [routerLink]="" (click)="showOptional=true">Optional</a>
+          <a *ngIf="!showOptional" class="enable-optional" [routerLink]="[][]" (click)="showOptional=true">Optional</a>
           <input matInput type="text" id="to" formControlName="to" placeholder="Invite required attendees"
             maxlength="1000" aria-label="Invite required attendees" autocapitalize="off" autocomplete="off"
             aria-autocomplete="both" />
