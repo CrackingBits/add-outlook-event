@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -8,15 +9,9 @@ import { CalInviteEditorComponent } from './cal-invite-editor/cal-invite-editor.
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        ReactiveFormsModule,
-        MatSlideToggleModule
-      ],
-      declarations: [
-        AppComponent,
-        CalInviteEditorComponent
-      ],
+      imports: [RouterTestingModule, ReactiveFormsModule, MatSlideToggleModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      declarations: [AppComponent, CalInviteEditorComponent],
     }).compileComponents();
   }));
 
@@ -30,6 +25,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Simple tool to prepare Outlook event invitations');
+    expect(compiled.querySelector('h1').textContent).toContain(
+      'Simple tool to prepare Outlook event invitations'
+    );
   });
 });
