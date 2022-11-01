@@ -1,4 +1,4 @@
-[![Angular GitHub CI](https://github.com/CrackingBits/crb-add-outlook-event/actions/workflows/angular-ci.yml/badge.svg)](https://github.com/CrackingBits/crb-add-outlook-event/actions/workflows/angular-ci.yml)
+[![Angular GitHub CI](https://github.com/CrackingBits/add-outlook-event/actions/workflows/angular-ci.yml/badge.svg)](https://github.com/CrackingBits/add-outlook-event/actions/workflows/angular-ci.yml)
 
 # Add Outlook Event
 
