@@ -1,32 +1,32 @@
 # Add Outlook Event webapp
 
-[![ng lint](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-lint.yml/badge.svg)](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-lint.yml)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![ng build & deploy](https://github.com/CrackingBits/add-outlook-event/actions/workflows/firebase-hosting-preview.yml/badge.svg)](https://github.com/CrackingBits/add-outlook-event/actions/workflows/firebase-hosting-preview.yml) [![ng lint](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-lint.yml/badge.svg)](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-lint.yml) [![ng test](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-test.yml/badge.svg)](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-test.yml)
 
 Do you need to block the slot in people's calendars? Does you corporation use O365?
+This tiny webapp/generator might be handy as you can generate URL you can paste to your email or website.
 
-This generator might be handy as you can generate URL you can paste to your email or website.
 Once they click the link, outlook.office.com deeplink takes care of it.
 
-[Open Web App](https://add-outlook-event.web.app) https://add-outlook-event.web.app
+[Open Web App](https://add-outlook-event.web.app)
+
+https://add-outlook-event.web.app
 
 ## Features
 
-- [x] Simple tool for generating URL (8 form fields)
-- [x] Flags for 'All day' and 'Teams meeting'
-- [x] Share URL in case you need to come back
+☑ Simple tool for generating URL (8 form fields)
+☑ Flags for 'All day' and 'Teams meeting'
+☑ Share URL in case you need to come back
 
 ## TODO
 
-- [] Safari not working (Outlook issue)
-- [] Not just URLs, but add also nice buttons "Add event ..."
-- [] Buttons to copy URL to clipboard
-- [] Emails via material chips https://material.angular.io/components/chips/examples
-- [] Handle Allday in better way
-- [] Add some rules for dates
-- [] HTML Wysiwyg editor for BODY
-- [] Preview of Outlook Event in form of some image
+☐ Safari not working (Outlook issue)
+☐ Not just URLs, but add also nice buttons "Add event ..."
+☐ Buttons to copy URL to clipboard
+☐ Emails via material chips https://material.angular.io/components/chips/examples
+☐ Handle Allday in better way
+☐ Add some rules for dates
+☐ HTML Wysiwyg editor for BODY
+☐ Preview of Outlook Event in form of some image
 
 ## Credits & Useful links
 
