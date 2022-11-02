@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![ng build & deploy](https://github.com/CrackingBits/add-outlook-event/actions/workflows/firebase-hosting-preview.yml/badge.svg)](https://github.com/CrackingBits/add-outlook-event/actions/workflows/firebase-hosting-preview.yml) [![ng lint](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-lint.yml/badge.svg)](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-lint.yml) [![ng test](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-test.yml/badge.svg)](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-test.yml)
 
+<a href="https://www.producthunt.com/posts/add-outlook-event?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-add&#0045;outlook&#0045;event" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=365652&theme=neutral" alt="Add&#0032;Outlook&#0032;Event - Simple&#0032;tool&#0032;to&#0032;prepare&#0032;Outlook&#0032;invitations&#0032;for&#0032;you&#0032;events | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 Do you need to block the slot in people's calendars? Does you corporation use O365?  
 This tiny webapp/generator might be handy as you can generate URL you can paste to your email or website.
 
