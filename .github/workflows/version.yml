@@ -17,4 +17,4 @@ jobs:
       - run: git config --global user.name 'Cracking Bits'
       - run: git config --global user.email 'info@crackingbits.com'
       - run: npm version patch -m "[RELEASE] %s"
-      - run: git push
+      - run: git push --follow-tags
