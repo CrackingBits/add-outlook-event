@@ -26,7 +26,19 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain(
-      'Simple tool to prepare Outlook event invitations'
+      'Add Outlook Event'
+    );
+  });
+
+  it('should render footer', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('#footer').textContent).toContain(
+      'Opensource'
+    );
+    expect(compiled.querySelector('#footer').textContent).toContain(
+      'Cracking Bits'
     );
   });
 });
