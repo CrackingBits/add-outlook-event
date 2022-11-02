@@ -1,6 +1,6 @@
 # Add Outlook Event webapp
 
-[![Angular GitHub CI](https://github.com/CrackingBits/add-outlook-event/actions/workflows/angular-ci.yml/badge.svg)](https://github.com/CrackingBits/add-outlook-event/actions/workflows/angular-ci.yml)
+[![ng lint](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-lint.yml/badge.svg)](https://github.com/CrackingBits/add-outlook-event/actions/workflows/ng-lint.yml)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

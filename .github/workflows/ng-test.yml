@@ -1,4 +1,4 @@
-name: ng lint
+name: ng test
 on:
   workflow_dispatch:
   pull_request:
