@@ -2,9 +2,6 @@ name: Version Increment
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   version:
