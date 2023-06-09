@@ -13,5 +13,5 @@ jobs:
           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
       - run: git config --global user.name 'Cracking Bits'
       - run: git config --global user.email 'info@crackingbits.com'
-      - run: npm version patch -m "[RELEASE] %s"
+      - run: npm version patch -m "[RELEASE] v%s"
       - run: git push --follow-tags
